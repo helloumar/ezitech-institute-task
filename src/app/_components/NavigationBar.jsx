@@ -36,7 +36,7 @@ const NavigationBar = () => {
                 <h1 className='text-md md:text-4xl font-bold'>EZITECH</h1>
                 <span className='text-sm'>LEARNING INSTITUTE</span>
             </div>
-            <div className='hidden sm:flex gap-5  font-bold'>{navItems?.map((item,index) =>
+            <div className='hidden sm:flex gap-5  font-bold'>{navItems?.map((item, index) =>
                 <Link key={index} href="" className='transition hover:text-blue-500 focus:text-blue-500 focus:border-b-2 focus:border-blue-500'>{item.name}</Link>
             )}
             </div>
@@ -52,11 +52,7 @@ const NavigationBar = () => {
             {isOpen && (
                 <div className='fixed inset-0 flex text-black items-center justify-center bg-blue-900 bg-opacity-90'>
                     <div className='bg-white p-5 rounded'>
-                        <a href="" className='block mb-3'>HOME</a>
-                        <a href="" className='block mb-3'>ABOUT US</a>
-                        <a href="" className='block mb-3'>CERTIFICATIONS</a>
-                        <a href="" className='block mb-3'>INTERNSHIPS</a>
-                        <a href="" className='block'>SEMINARS</a>
+                        {navItems?.map((item, index) => <Link key={index} href="" className='block mb-3'>{item?.name}</Link>)}
                     </div>
                 </div>)}
 
